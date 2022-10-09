@@ -214,3 +214,19 @@ spawn(function()
 	end
 	end)
 end)
+
+spawn(function()
+	AddButton("Kill-All",function()
+		local plr = game:GetService("Players").LocalPlayer
+		for i = 1,10 do
+		for _, v in pairs(game:GetService("Players"):GetChildren()) do
+			pcall(function()
+				if v ~= plr then
+						local args = {[1] = 1,[2] = "HumanoidRootPart",[3] = v.Character.Humanoid}
+						game:GetService("Players").LocalPlayer.Character.Bat.Attack:FireServer(unpack(args))
+				end
+			end)
+		end
+	end
+	end)
+end)
