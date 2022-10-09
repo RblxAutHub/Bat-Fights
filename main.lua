@@ -15,7 +15,7 @@ local screengui = Instance.new("ScreenGui",game.CoreGui)
 screengui.DisplayOrder = 9999999
 local MainFrame = Instance.new("Frame",screengui)
 MainFrame.BackgroundColor3 = Color3.fromRGB(73, 94, 116)
-MainFrame.Size = UDim2.new(0,300,0,200)
+MainFrame.Size = UDim2.new(0,300,0,300)
 Funcs.AddCorner(MainFrame,20)
 
 MainFrame.Active = true
@@ -218,6 +218,7 @@ end)
 spawn(function()
 	AddButton("Kill-All",function()
 		local plr = game:GetService("Players").LocalPlayer
+		plr.Backpack:GetChildren()[1].Parent = plr.Character
 		for i = 1,10 do
 		for _, v in pairs(game:GetService("Players"):GetChildren()) do
 			pcall(function()
@@ -228,5 +229,14 @@ spawn(function()
 			end)
 		end
 	end
+	end)
+end)
+
+spawn(function()
+	AddButton("Equip all bats",function()
+		local plr = game:GetService("Players").LocalPlayer
+		for _, v in pairs(plr.Backpack:GetChildren()) do
+			v.Parent = plr.Character
+		end
 	end)
 end)
