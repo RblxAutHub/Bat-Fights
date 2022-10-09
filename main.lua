@@ -218,7 +218,9 @@ end)
 spawn(function()
 	AddButton("Kill-All",function()
 		local plr = game:GetService("Players").LocalPlayer
+		pcall(function()
 		plr.Backpack:GetChildren()[1].Parent = plr.Character
+		end)
 		for i = 1,10 do
 		for _, v in pairs(game:GetService("Players"):GetChildren()) do
 			pcall(function()
