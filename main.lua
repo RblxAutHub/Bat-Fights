@@ -173,8 +173,7 @@ spawn(function()
 								if dist < 15 then
 										local args = {[1] = 1,[2] = "HumanoidRootPart",[3] = v.Character.Humanoid}
 										game:GetService("Players").LocalPlayer.Character.Bat.Attack:FireServer(unpack(args))
-										local args = {[1] = 2,[2] = "HumanoidRootPart",[3] = v.Character.Humanoid}
-										game:GetService("Players").LocalPlayer.Character.Bat.Attack:FireServer(unpack(args))
+
 								end
 						end
 					end)
@@ -225,8 +224,6 @@ spawn(function()
 			pcall(function()
 				if v ~= plr then
 						local args = {[1] = 1,[2] = "HumanoidRootPart",[3] = v.Character.Humanoid}
-						game:GetService("Players").LocalPlayer.Character.Bat.Attack:FireServer(unpack(args))
-						local args = {[1] = 2,[2] = "HumanoidRootPart",[3] = v.Character.Humanoid}
 						game:GetService("Players").LocalPlayer.Character.Bat.Attack:FireServer(unpack(args))
 				end
 			end)
