@@ -178,7 +178,7 @@ spawn(function()
 						end
 					end)
 				end
-			until is_on == false
+			until is_on == false or running == false
 		end
 	end)
 end)
